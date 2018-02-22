@@ -1,10 +1,12 @@
 /*
    Import partials below
 */
-@import 'reset.scss';
+@import 'reset';
+@import 'base';
+@import 'header';
+@import 'nav';
+@import 'page';
+@import 'footer';
 
-.wrapper {
-  width: 1024px;
-  outline: solid 1px red;
-}
+
 
