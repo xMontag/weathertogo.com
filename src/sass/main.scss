@@ -2,9 +2,10 @@
    Import partials below
 */
 @import 'reset.scss';
+@import 'header.scss';
 
 .wrapper {
   width: 1024px;
+  margin: 0 auto;
   outline: solid 1px red;
 }
-
