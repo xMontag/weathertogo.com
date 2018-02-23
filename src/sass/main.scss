@@ -1,6 +1,7 @@
 /*
    Import partials below
 */
+<<<<<<< HEAD
 @import 'reset';
 @import 'base';
 @import 'header';
@@ -10,3 +11,13 @@
 
 
 
+=======
+@import 'reset.scss';
+@import 'header.scss';
+
+.wrapper {
+  width: 1024px;
+  margin: 0 auto;
+  outline: solid 1px red;
+}
+>>>>>>> b721e2950645fc987ae2dc41cac1ea7a19ebd350
