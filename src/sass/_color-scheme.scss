@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Ubuntu+Condensed|Ubuntu:400,500,700&subset=cyrillic');
+/*
+font-family: 'Ubuntu', sans-serif; // для основного текста
+font-family: 'Ubuntu Condensed', sans-serif; // для ужатого текста
+font-family: 'Amatic SC', cursive; // для девиза-подзаголовка
+*/
+
+.color {
+    &__back-ground {
+        background-color: #eabcb0
+    }
+    &__back-gray {
+        background-color: #e2e7e9
+    }
+    &__back-night {
+        background-color: #f0f3f4
+    }
+    &__back-btn {
+        background-color: #8f496c
+    }
+    &__back-btn-hover {
+        background-color: #7a2a52
+    }
+    &__font-light {
+        color: #fcf9e3
+    }
+    &__font-aubergine {
+        color: #8f496c
+    }
+    &__font-dark {
+        color: #424e59
+    }
+    &__font-inactive {
+        color: rgba(66, 78, 89, 0.6)
+    }
+}
+
+.font {
+    &__main {
+        font-family: 'Ubuntu', sans-serif;
+    }
+    &__subtitle {
+        font-family: 'Amatic SC', cursive;
+    }
+    &__condensed {
+        font-family: 'Ubuntu Condensed', sans-serif
+    }
+}
