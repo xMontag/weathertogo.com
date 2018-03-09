@@ -23,3 +23,13 @@ img, svg {
 p{
     margin-bottom: 0;
 }
+
+.wrapper {
+    width: 90%;
+    margin: auto;
+    @include flex-center-col;
+}
+
+.header {
+    @include flex-center-col;
+}
