@@ -16,5 +16,11 @@
     &:hover {
         border-bottom: 2px solid #6c757d;
         text-decoration: none;
+        opacity: 1.0;
+    }
+
+    &--active {
+        border-bottom: 2px solid #6c757d;
+        opacity: 1.0;
     }
 }

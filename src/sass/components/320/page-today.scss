@@ -1,0 +1,50 @@
+.today {
+    padding-top: rem(16px);
+}
+
+.today__title {
+    background-color: #e2e7e9;
+    @include flex-between;
+    padding: rem(6px) rem(8px);
+    border-radius: rem(4px);
+    color: $base-color;
+}
+
+.today__day {
+
+}
+
+.today__date {
+
+}
+
+.today__str {
+    display: flex;
+    color: $brand-color;
+    padding: rem(6px) 0;
+}
+
+.today__str:nth-child(odd) {
+    background-color: #f0f3f4;
+}
+
+.today__time {
+    flex-basis: 17%;
+    padding-left: rem(9px);
+}
+
+.today__precip {
+    flex-basis: 23%;
+    background-image: url(images/group.png);
+    background-repeat: no-repeat;
+    background-position: left rem(3px);
+    padding-left: rem(19px);
+}
+
+.today__temp {
+    flex-basis: 15%;
+}
+
+.today__text {
+    flex-basis: 45%;
+}
