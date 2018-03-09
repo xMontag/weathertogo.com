@@ -1,0 +1,6 @@
+$font-size: 16px;
+
+@function rem($pixels) {
+    $rem: $pixels/$font-size;
+    @return #{$rem}rem;
+}
