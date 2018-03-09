@@ -1,0 +1,40 @@
+.header-visual {
+    @include flex-around;
+    padding-top: rem(20px);
+}
+
+.header-visual__img {
+    background-image: url(images/character.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    flex-basis: 45%;
+}
+
+.header-visual__block {
+    flex-basis: 55%;
+    @include flex-center-col;
+}
+
+.header-visual__precip {
+    background-image: url(images/icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: rem(80px);
+    height: rem(65px);
+}
+
+.header-visual__title {
+    color: $brand-color;
+    margin-top: rem(16px);
+    text-align: center;
+}
+
+.header-visual__temp {
+    color: $title-color;
+    margin-top: rem(8px);
+}
+
+.header-visual__text {
+    color: #424e59;
+    text-align: justify;
+}
