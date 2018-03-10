@@ -1,0 +1,15 @@
+@media (min-width: 480px){
+
+    .header__nav {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: rem(15px);
+    }
+
+    .nav {
+        @include flex-between;
+        flex-basis: 65%;
+        flex-wrap: wrap;
+    }
+
+}

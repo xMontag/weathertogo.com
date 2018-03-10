@@ -13,6 +13,7 @@
     border: 0;
     padding: rem(9px);
     border-radius: rem(6px);
+    color: $title-color;
 }
 
 .header__input::-webkit-input-placeholder {color: $title-color;}
