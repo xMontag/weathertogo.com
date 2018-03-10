@@ -1,0 +1,14 @@
+.header {
+    padding-top: rem(16px);
+}
+
+.header__title {
+    color: $title-color;
+    border-bottom: 3px solid $title-color;
+    padding-bottom: rem(7px);
+}
+
+.header__subtitle {
+    color: $base-color;
+    margin-top: rem(10px);
+}

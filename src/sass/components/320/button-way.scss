@@ -1,0 +1,12 @@
+.header__button {
+   margin-top: rem(12px);
+}
+
+.button-way__button {
+    background-color: $brand-color;
+    padding: rem(7px) rem(30px);
+    border: 0;
+    border-radius: rem(7px);
+    color: $title-color;
+    cursor: pointer;
+}

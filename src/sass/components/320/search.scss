@@ -1,0 +1,22 @@
+.header__form {
+    margin-top: rem(22px);
+    width: 100%;
+}
+
+.header__search {
+
+}
+
+.header__input {
+    background-color: #cfaba1;
+    width: 100%;
+    border: 0;
+    padding: rem(9px);
+    border-radius: rem(6px);
+    color: $title-color;
+}
+
+.header__input::-webkit-input-placeholder {color: $title-color;}
+.header__input::-moz-placeholder          {color: $title-color;}/* Firefox 19+ */
+.header__input:-moz-placeholder           {color: $title-color;}/* Firefox 18- */
+.header__input:-ms-input-placeholder      {color: $title-color;}

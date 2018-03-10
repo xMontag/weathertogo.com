@@ -1,0 +1,25 @@
+.page {
+    padding: rem(16px) rem(16px) rem(28px);
+    background-color: #fff;
+    border-radius: rem(13px);
+}
+
+.page__menu {
+    @include flex-between;
+}
+
+.menu__link {
+    color: $base-color;
+    opacity: 0.6;
+    padding: rem(4px) rem(10px);
+
+    &:hover {
+        text-decoration: none;
+        opacity: 1.0;
+    }
+
+    &--active {
+        border-bottom: 2px solid #6c757d;
+        opacity: 1.0;
+    }
+}

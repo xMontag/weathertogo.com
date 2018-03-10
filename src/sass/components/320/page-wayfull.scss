@@ -1,0 +1,94 @@
+.wayfull {
+    padding-top: rem(16px);
+}
+
+.wayfull__block {
+    margin-top: rem(16px);
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.wayfull__title {
+    background-color: #e2e7e9;
+    display: flex;
+    padding: rem(6px) rem(8px);
+    border-radius: rem(4px);
+    color: $base-color;
+}
+
+.wayfull__day {
+    flex-basis: 24%;
+}
+
+.wayfull__date {
+    padding-left: rem(5px);
+}
+
+.wayfull__city {
+    margin-left: auto;
+    text-align: right;
+}
+
+.wayfull__str {
+    display: flex;
+    color: $brand-color;
+    padding: rem(6px) 0;
+    align-items:flex-start;
+}
+
+.wayfull__time {
+    flex-basis: 17%;
+    padding-left: rem(9px);
+    padding-right: rem(5px);
+    line-height: 1.4;
+}
+
+.wayfull__precip {
+
+    flex-basis: 23%;
+    display: flex;
+    align-items: center;
+
+    &::before {
+        margin-right: rem(8px);
+        background-image: url(images/thunderstorm.png);
+        background-repeat: no-repeat;
+        width: rem(10px);
+        height: rem(10px);
+        display: block;
+        content: "";
+    }
+
+    &--sun:before {
+        background-image: url(images/sun.png);
+        margin-right: rem(8px);
+        background-repeat: no-repeat;
+        width: rem(10px);
+        height: rem(10px);
+        display: block;
+        content: "";
+        background-size: contain;
+    }
+
+    &--moon:before {
+        background-image: url(images/moon.png);
+        margin-right: rem(8px);
+        background-repeat: no-repeat;
+        width: rem(10px);
+        height: rem(10px);
+        display: block;
+        content: "";
+        background-size: contain;
+    }
+
+}
+
+.wayfull__temp {
+    flex-basis: 15%;
+}
+
+.wayfull__text {
+    flex-basis: 45%;
+}
