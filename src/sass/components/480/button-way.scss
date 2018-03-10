@@ -3,6 +3,8 @@
     .header__button {
        margin-top: 0;
        flex-basis: 32%;
+       display: flex;
+       justify-content: flex-end;
     }
 
     .button-way__button {
