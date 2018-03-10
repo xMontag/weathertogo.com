@@ -1,0 +1,71 @@
+.wayfull {
+    padding-top: rem(16px);
+}
+
+.wayfull__block {
+    margin-top: rem(16px);
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.wayfull__title {
+    background-color: #e2e7e9;
+    display: flex;
+    padding: rem(6px) rem(8px);
+    border-radius: rem(4px);
+    color: $base-color;
+}
+
+.wayfull__day {
+    flex-basis: 24%;
+}
+
+.wayfull__date {
+    padding-left: rem(5px);
+}
+
+.wayfull__city {
+    margin-left: auto;
+    text-align: right;
+}
+
+.wayfull__str {
+    display: flex;
+    color: $brand-color;
+    padding: rem(6px) 0;
+}
+
+.wayfull__time {
+    flex-basis: 17%;
+    padding-left: rem(9px);
+    padding-right: rem(5px);
+    line-height: 1.4;
+}
+
+.wayfull__precip {
+    flex-basis: 23%;
+    background-image: url(images/thunderstorm.png);
+    background-repeat: no-repeat;
+    background-position: left rem(3px);
+    padding-left: rem(19px);
+    line-height: 1.4;
+
+    &--sun {
+        background-image: url(images/sun.png);
+
+    }
+
+    &--moon {
+        background-image: url(images/moon.png);
+    }
+}
+
+.wayfull__temp {
+    flex-basis: 15%;
+}
+
+.wayfull__text {
+    flex-basis: 45%;
+}

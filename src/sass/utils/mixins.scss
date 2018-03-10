@@ -20,3 +20,15 @@
     display: flex;
     justify-content:space-between;
 }
+
+@mixin padding-border{
+    padding: rem(5px) rem(10px);
+    background-color: #e2e7e9;
+    border-radius: rem(8px);
+}
+
+@mixin flex-start{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
