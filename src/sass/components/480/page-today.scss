@@ -10,7 +10,13 @@
     }
 
     .today__precip {
-        background-position: left rem(5px);
+
+        &::before {
+            width: rem(15px);
+            height: rem(15px);
+            background-size: contain;
+            background-position: left rem(5px);
+        }
     }
 
 }

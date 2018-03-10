@@ -35,6 +35,7 @@
     display: flex;
     color: $brand-color;
     padding: rem(6px) 0;
+    align-items:flex-start;
 }
 
 .wayfull__time {
@@ -45,21 +46,43 @@
 }
 
 .wayfull__precip {
+
     flex-basis: 23%;
-    background-image: url(images/thunderstorm.png);
-    background-repeat: no-repeat;
-    background-position: left rem(3px);
-    padding-left: rem(19px);
-    line-height: 1.4;
+    display: flex;
+    align-items: center;
 
-    &--sun {
+    &::before {
+        margin-right: rem(8px);
+        background-image: url(images/thunderstorm.png);
+        background-repeat: no-repeat;
+        width: rem(10px);
+        height: rem(10px);
+        display: block;
+        content: "";
+    }
+
+    &--sun:before {
         background-image: url(images/sun.png);
-
+        margin-right: rem(8px);
+        background-repeat: no-repeat;
+        width: rem(10px);
+        height: rem(10px);
+        display: block;
+        content: "";
+        background-size: contain;
     }
 
-    &--moon {
+    &--moon:before {
         background-image: url(images/moon.png);
+        margin-right: rem(8px);
+        background-repeat: no-repeat;
+        width: rem(10px);
+        height: rem(10px);
+        display: block;
+        content: "";
+        background-size: contain;
     }
+
 }
 
 .wayfull__temp {

@@ -1,0 +1,22 @@
+@media (min-width: 960px){
+
+    .today__title {
+        padding: rem(8px) rem(8px);
+        border-radius: rem(8px);
+    }
+
+    .today__str {
+        padding: rem(8px) 0;
+    }
+
+    .today__precip {
+
+        &::before {
+            width: rem(19px);
+            height: rem(19px);
+            background-size: contain;
+            background-position: left rem(6px);
+        }
+    }
+
+}

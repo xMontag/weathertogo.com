@@ -1,0 +1,10 @@
+@media (min-width: 768px){
+
+    .weekend__precip {
+
+        &::before {
+            margin-right: rem(15px);
+        }
+    }
+
+}
