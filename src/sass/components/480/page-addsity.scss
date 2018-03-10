@@ -1,0 +1,19 @@
+@media (min-width: 480px){
+
+       .add-sity__del {
+            background-position: rem(9px) center;
+        }
+
+        .add-sity__arrival {
+            padding-left: 0;
+            text-align: center;
+        }
+
+        .add-sity__del {
+            background-position: 80% center;
+            width: rem(8px);
+            height: rem(8px);
+            background-size: contain;
+        }
+
+}

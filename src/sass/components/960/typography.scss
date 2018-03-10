@@ -1,0 +1,15 @@
+@media (min-width: 960px){
+
+    .menu__link {
+        font-size: rem(22px);
+    }
+
+    .today__title, .tomorrow__title, .weekend__title, .wayfull__title {
+        font-size: rem(18px);
+    }
+
+    .today__str, .tomorrow__str, .weekend__str, .wayfull__str {
+        font-size: rem(16px);
+    }
+
+}

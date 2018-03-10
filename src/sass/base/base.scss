@@ -1,0 +1,35 @@
+body{
+    min-width: rem(320px);
+    max-width: 100%;
+    background-color: $body-color;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+a{
+    text-decoration: none;
+
+    &:hover{
+        text-decoration: underline;
+    }
+
+}
+
+img, svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+p{
+    margin-bottom: 0;
+}
+
+.wrapper {
+    width: 90%;
+    margin: auto;
+    @include flex-center-col;
+}
+
+.header {
+    @include flex-center-col;
+}

@@ -1,0 +1,19 @@
+.header__nav {
+    @include flex-center-col;
+    margin-top: rem(15px);
+    width: 100%;
+}
+
+.nav {
+    @include flex-around;
+    width: 100%;
+}
+
+.nav__link {
+    color:  $title-color;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

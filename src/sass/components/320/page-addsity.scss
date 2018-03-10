@@ -1,0 +1,60 @@
+.add-sity {
+    padding-top: rem(16px);
+}
+
+.add-sity__str {
+    margin-top: rem(16px);
+    @include flex-start;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.add-sity__sity {
+    flex-basis: 45%;
+    color: $base-color;
+    @include padding-border;
+}
+
+.add-sity__arrival {
+    flex-basis: 22%;
+    color: $brand-color;
+    padding-left: rem(7px);
+}
+
+.add-sity__date {
+    flex-basis: 28%;
+    color: $base-color;
+    @include padding-border;
+    background-image: url(images/date.png);
+    background-repeat: no-repeat;
+    background-position: 90% center;
+    cursor: pointer;
+}
+
+.add-sity__del {
+    flex-basis: 5%;
+    background-image: url(images/del.png);
+    background-repeat: no-repeat;
+    background-position: rem(7px) center;
+    width: rem(6px);
+    height: rem(6px);
+    cursor: pointer;
+}
+
+.add-sity__control {
+    margin-top: rem(16px);
+    @include flex-between;
+}
+
+.add-sity__button {
+    color: $base-color;
+    @include padding-border;
+    cursor: pointer;
+    border: 0;
+}
+
+.add-sity__look {
+    color: $brand-color;
+}

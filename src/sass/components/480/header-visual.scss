@@ -1,0 +1,14 @@
+@media (min-width: 480px){
+
+    .header-visual {
+        width: 100%;
+        @include flex-between;
+        padding-top: rem(20px);
+        padding-bottom: rem(33px);
+    }
+
+    .header-visual__img {
+        flex-basis: 40%;
+    }
+
+}

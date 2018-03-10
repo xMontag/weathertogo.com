@@ -1,0 +1,13 @@
+@media (min-width: 960px){
+
+    .tomorrow__precip {
+
+        &::before {
+            width: rem(19px);
+            height: rem(19px);
+            background-size: contain;
+            background-position: left rem(6px);
+        }
+    }
+
+}

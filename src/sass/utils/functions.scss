@@ -1,0 +1,4 @@
+@function rem($pixels) {
+  $remSize: $pixels / $font-size;
+  @return $remSize * 1rem;
+}
