@@ -1,0 +1,50 @@
+.tomorrow {
+    padding-top: rem(16px);
+}
+
+.tomorrow__title {
+    background-color: #e2e7e9;
+    @include flex-between;
+    padding: rem(6px) rem(8px);
+    border-radius: rem(4px);
+    color: $base-color;
+}
+
+.tomorrow__day {
+
+}
+
+.tomorrow__date {
+
+}
+
+.tomorrow__str {
+    display: flex;
+    color: $brand-color;
+    padding: rem(6px) 0;
+}
+
+.tomorrow__str:nth-child(odd) {
+    background-color: #f0f3f4;
+}
+
+.tomorrow__time {
+    flex-basis: 17%;
+    padding-left: rem(9px);
+}
+
+.tomorrow__precip {
+    flex-basis: 23%;
+    background-image: url(images/group.png);
+    background-repeat: no-repeat;
+    background-position: left rem(3px);
+    padding-left: rem(19px);
+}
+
+.tomorrow__temp {
+    flex-basis: 15%;
+}
+
+.tomorrow__text {
+    flex-basis: 45%;
+}
