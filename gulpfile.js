@@ -1,14 +1,16 @@
 // В переменные получаем установленные пакеты
-const gulp = require('gulp');
-const browserSync = require('browser-sync').create();
-const sass = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
-const cssnano = require('gulp-cssnano');
-const mmq = require('gulp-merge-media-queries');
-const del = require('del');
-const htmlmin = require('gulp-htmlmin');
-const imagemin = require('gulp-imagemin');
-const rigger = require('gulp-rigger');
+const gulp          = require('gulp'),
+      browserSync   = require('browser-sync').create(),
+      sass          = require('gulp-sass'),
+      autoprefixer  = require('gulp-autoprefixer'),
+      cssnano       = require('gulp-cssnano'),
+      mmq           = require('gulp-merge-media-queries'),
+      del           = require('del'),
+      htmlmin       = require('gulp-htmlmin'),
+      imagemin      = require('gulp-imagemin'),
+      rigger        = require('gulp-rigger'),
+      babel         = require('gulp-babel'),
+      uglify        = require('gulp-uglifyjs');
 
 // Создаем таск для сборки html файлов
 gulp.task('html', () => {
@@ -51,6 +53,25 @@ gulp.task('css', () => {
     .pipe(browserSync.reload({
       stream: true
     }));
+});
+
+gulp.task('js', function() {
+    return gulp.src('src/js/*.js')
+        .pipe(rigger())
+        .pipe(
+            babel({
+                "presets": [
+                    ["env", {
+                        "targets": {
+                            "browsers": ["last 2 versions", "safari >= 7"]
+                        }
+                    }]
+                ]
+            })
+        )
+        .pipe(uglify('scripts.min.js'))
+        .pipe(gulp.dest('dist'))
+        .pipe(browserSync.reload({stream: true}));
 });
 
 // Создаем таск для оптимизации картинок
@@ -113,7 +134,7 @@ gulp.task('del:dist', () => {
 });
 
 // Таск который 1 раз собирает все статические файлы
-gulp.task('build', ['html', 'css', 'img', 'fonts']);
+gulp.task('build', ['html', 'css', 'js', 'img', 'fonts']);
 
 // Главный таск, сначала удаляет папку dist,
 // потом собирает статику, после чего поднимает сервер
