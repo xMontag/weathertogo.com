@@ -33,3 +33,11 @@ p{
 .header {
     @include flex-center-col;
 }
+
+.js-page {
+    display: none;
+}
+
+.js-block {
+    display: block;
+}
