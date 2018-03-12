@@ -55,8 +55,8 @@ gulp.task('css', () => {
     }));
 });
 
-gulp.task('js', function() {
-    return gulp.src('src/js/*.js')
+gulp.task('js', () => {
+    return gulp.src('./src/*.js')
         .pipe(rigger())
         .pipe(
             babel({
@@ -110,6 +110,8 @@ gulp.task('watch', () => {
   gulp.watch('./src/**/*.html', ['html']);
   // Следим за изменениями в любом sass файле и вызываем таск 'css' на каждом изменении
   gulp.watch('./src/sass/**/*.scss', ['css']);
+  // Следим за изменениями в любом js файле и вызываем таск 'js' на каждом изменении
+  gulp.watch('./src/**/*.js', ['js']);
   // Следим за изменениями картинок и вызываем таск 'img' на каждом изменении
   gulp.watch('./src/images/**/*.*', ['img']);
   // Следим за изменениями в шрифтах и вызываем таск 'fonts' на каждом изменении
