@@ -1,2 +1,2 @@
-//= js/polifills/Array.from.js
+//= js/polyfills/Array.from.js
 //= js/setActiveLink.js
