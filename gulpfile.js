@@ -57,18 +57,9 @@ gulp.task('css', () => {
 
 gulp.task('js', () => {
     return gulp.src('./src/*.js')
+ // ['./src/*.js', './node_modules/babel-polyfill/dist/polyfill.js']
         .pipe(rigger())
-        .pipe(
-            babel({
-                "presets": [
-                    ["env", {
-                        "targets": {
-                            "browsers": ["last 2 versions", "safari >= 7"]
-                        }
-                    }]
-                ]
-            })
-        )
+        .pipe(babel())
         .pipe(uglify('scripts.min.js'))
         .pipe(gulp.dest('dist'))
         .pipe(browserSync.reload({stream: true}));

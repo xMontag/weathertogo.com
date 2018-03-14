@@ -1,2 +1,2 @@
-//= js/setActiveLinkIE.js
+//= js/polifills/Array.from.js
 //= js/setActiveLink.js
