@@ -56,8 +56,8 @@ gulp.task('css', () => {
 });
 
 gulp.task('js', () => {
-    return gulp.src('./src/*.js')
- // ['./src/*.js', './node_modules/babel-polyfill/dist/polyfill.js']
+    return gulp.src(['./src/*.js', './src/js/lib/*.js'])
+ // ['./src/*.js', './node_modules/babel-polyfill/dist/polyfill.js', './node_modules/handlebars/dist/handlebars.js']
         .pipe(rigger())
         .pipe(babel())
         .pipe(uglify('scripts.min.js'))
