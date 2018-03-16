@@ -7,7 +7,7 @@ google.maps.event.addListener(autocomplete, "place_changed", function () {
     const place = autocomplete.getPlace();
 
     // -------------------- отладочный блок -------------------
-    console.log(place);
+    //console.log(place);
     const currentPlace = document.getElementById("header-visual__city");
     currentPlace.textContent = place.name;
 })
