@@ -10,6 +10,12 @@
     color: $base-color;
 }
 
+.today__header-block {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .today__day {
 
 }
@@ -24,7 +30,7 @@
     padding: rem(6px) 0;
 }
 
-.today__str:nth-child(odd) {
+.today__str:nth-child(even) {
     background-color: #f0f3f4;
 }
 

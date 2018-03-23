@@ -1,78 +1,30 @@
 <div class="today js-page js-block">
-    <div class="today__title">
-        <p class="today__day">Пятница</p>
-        <p class="today__date">15 февраля 2018</p>
-    </div>
-    <div class="today__str">
-        <p class="today__time">02:00</p>
-        <p class="today__precip">гроза</p>
-        <p class="today__temp">+5&deg;С</p>
-        <p class="today__text">сильный ветер, возможен град</p>
-    </div>
-    <div class="today__str">
-        <p class="today__time">04:00</p>
-        <p class="today__precip">гроза</p>
-        <p class="today__temp">+5&deg;С</p>
-        <p class="today__text">сильный ветер</p>
-    </div>
-    <div class="today__str">
-        <p class="today__time">06:00</p>
-        <p class="today__precip">гроза</p>
-        <p class="today__temp">+5&deg;С</p>
-        <p class="today__text">сильный ветер, возможен град</p>
-    </div>
-    <div class="today__str">
-        <p class="today__time">08:00</p>
-        <p class="today__precip">гроза</p>
-        <p class="today__temp">+5&deg;С</p>
-        <p class="today__text">сильный ветер</p>
-    </div>
-    <div class="today__str">
-        <p class="today__time">10:00</p>
-        <p class="today__precip">гроза</p>
-        <p class="today__temp">+5&deg;С</p>
-        <p class="today__text">сильный ветер, возможен град</p>
-    </div>
-    <div class="today__str">
-        <p class="today__time">12:00</p>
-        <p class="today__precip">гроза</p>
-        <p class="today__temp">+5&deg;С</p>
-        <p class="today__text">сильный ветер</p>
-    </div>
-    <div class="today__str">
-        <p class="today__time">14:00</p>
-        <p class="today__precip">гроза</p>
-        <p class="today__temp">+5&deg;С</p>
-        <p class="today__text">сильный ветер, возможен град</p>
-    </div>
-    <div class="today__str">
-        <p class="today__time">16:00</p>
-        <p class="today__precip">гроза</p>
-        <p class="today__temp">+5&deg;С</p>
-        <p class="today__text">сильный ветер</p>
-    </div>
-    <div class="today__str">
-        <p class="today__time">18:00</p>
-        <p class="today__precip">гроза</p>
-        <p class="today__temp">+5&deg;С</p>
-        <p class="today__text">сильный ветер, возможен град</p>
-    </div>
-    <div class="today__str">
-        <p class="today__time">20:00</p>
-        <p class="today__precip">гроза</p>
-        <p class="today__temp">+5&deg;С</p>
-        <p class="today__text">сильный ветер</p>
-    </div>
-    <div class="today__str">
-        <p class="today__time">22:00</p>
-        <p class="today__precip">гроза</p>
-        <p class="today__temp">+5&deg;С</p>
-        <p class="today__text">сильный ветер, возможен град</p>
-    </div>
-    <div class="today__str">
-        <p class="today__time">24:00</p>
-        <p class="today__precip">гроза</p>
-        <p class="today__temp">+5&deg;С</p>
-        <p class="today__text">сильный ветер</p>
-    </div>
+   <div class="today__title">
+        
+   </div>
+   <div class="today__main">
+       
+   </div>
 </div>
+
+<script id="today-template" type="text/x-handlebars-template">
+     <div class="today__block">
+          {{#each this}}
+                <div class="today__str">
+                    <p class="today__time">{{title}}</p>
+                    <p class="today__precip">{{precipType}}</p>
+                    <p class="today__temp">{{temperature}}&deg;С</p>
+                    <p class="today__text">{{description}}</p>
+                </div>
+          {{/each}}
+      </div>
+</script>
+
+<script id="today-header-template" type="text/x-handlebars-template">
+     <div class="today__header-block">
+         
+         <p class="today__day">{{weekday}}</p>
+         <p class="today__date">{{date}}</p>
+         
+      </div>
+</script>
