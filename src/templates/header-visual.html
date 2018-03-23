@@ -3,7 +3,14 @@
 
 <div class="header-visual__block">
     <div class="header-visual__precip"></div>
-    <h3 class="header-visual__title" id="header-visual__city">Каменец-Подольский</h3>
-    <div class="header-visual__temp">+5C</div>
-    <div class="header-visual__text">&nbsp;&nbsp;&nbsp;&nbsp;Сегодня днем будет сильный ветер и дождь, сыро, поэтому одевайся теплее</div>
+    <h3 class="header-visual__title" id="header-visual__city">Киев</h3>
+    <div class="header-visual__js-block">
+        
+    </div>
 </div>
+<script id="header-template" type="text/x-handlebars-template">
+     <div class="header-visual__js-templ">
+        <div class="header-visual__temp">{{temperature}}C</div>
+        <div class="header-visual__text">&nbsp;&nbsp;&nbsp;&nbsp;Сегодня днем будет {{description}}, поэтому одевайся теплее</div>
+     </div>    
+</script>

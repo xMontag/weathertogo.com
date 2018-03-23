@@ -10,7 +10,8 @@ const gulp          = require('gulp'),
       imagemin      = require('gulp-imagemin'),
       rigger        = require('gulp-rigger'),
       babel         = require('gulp-babel'),
-      uglify        = require('gulp-uglifyjs');
+      uglify        = require('gulp-uglifyjs'),
+      handlebars    = require('handlebars');
 
 // Создаем таск для сборки html файлов
 gulp.task('html', () => {
@@ -59,7 +60,14 @@ gulp.task('js', () => {
     return gulp.src('./src/*.js')
  // ['./src/*.js', './node_modules/babel-polyfill/dist/polyfill.js']
         .pipe(rigger())
-        .pipe(babel())
+        .pipe(babel(
+    
+            {
+              "presets": ["env"],
+              "ignore": ["node_modules/handlebars/dist/handlebars.js"]
+            }
+    
+        ))
         .pipe(uglify('scripts.min.js'))
         .pipe(gulp.dest('dist'))
         .pipe(browserSync.reload({stream: true}));
