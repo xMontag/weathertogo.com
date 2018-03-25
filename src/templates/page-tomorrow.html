@@ -1,30 +1,30 @@
 <div class="tomorrow js-page js-none">
-    <div class="tomorrow__title">
-        <p class="tomorrow__day">Суббота</p>
-        <p class="tomorrow__date">16 февраля 2018</p>
-    </div>
-    <div class="tomorrow__str">
-        <p class="tomorrow__time">Ночь</p>
-        <p class="tomorrow__precip">гроза</p>
-        <p class="tomorrow__temp">+5&deg;С</p>
-        <p class="tomorrow__text">сильный ветер, возможен град</p>
-    </div>
-    <div class="tomorrow__str">
-        <p class="tomorrow__time">Утро</p>
-        <p class="tomorrow__precip">гроза</p>
-        <p class="tomorrow__temp">+5&deg;С</p>
-        <p class="tomorrow__text">сильный ветер</p>
-    </div>
-    <div class="tomorrow__str">
-        <p class="tomorrow__time">День</p>
-        <p class="tomorrow__precip">гроза</p>
-        <p class="tomorrow__temp">+5&deg;С</p>
-        <p class="tomorrow__text">сильный ветер, возможен град</p>
-    </div>
-    <div class="tomorrow__str">
-        <p class="tomorrow__time">Вечер</p>
-        <p class="tomorrow__precip">гроза</p>
-        <p class="tomorrow__temp">+5&deg;С</p>
-        <p class="tomorrow__text">сильный ветер</p>
-    </div>
+   <div class="tomorrow__title">
+
+   </div>
+   <div class="tomorrow__main">
+
+   </div>
 </div>
+
+ <script id="tomorrow-header-template" type="text/x-handlebars-template">
+     <div class="tomorrow__header-block">
+
+         <p class="tomorrow__day">{{weekday}}</p>
+         <p class="tomorrow__date">{{date}}</p>
+
+      </div>
+</script>
+
+<script id="tomorrow-template" type="text/x-handlebars-template">
+     <div class="tomorrow__block">
+          {{#each this}}
+                <div class="tomorrow__str">
+                    <p class="tomorrow__time">{{title}}</p>
+                    <p class="tomorrow__precip">{{precipType}}</p>
+                    <p class="tomorrow__temp">{{temperature}}&deg;С</p>
+                    <p class="tomorrow__text">{{description}}</p>
+                </div>
+          {{/each}}
+      </div>
+</script>
