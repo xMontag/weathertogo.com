@@ -72,19 +72,25 @@ function getWeather(lat, lng, lang) {
 
       // погода завтра
       weather.tomorrow.header = new Header(myWeather.hourly.data[nextDayIndex].time);
-      //weather.tomorrow.body[0] = new WeatherStr(getDate(el.time).toLocaleString(lang, {hour: '2-digit', minute: '2-digit'}), el.icon, el.precipType, Math.round(el.temperature), el.summary));
-      const srcArrTomorrow = myWeather.hourly.data.slice(nextDayIndex + 1, nextDayIndex + 25);
+      const srcArrTomorrow = myWeather.hourly.data.slice(nextDayIndex, nextDayIndex + 25);
+      const nightPeriod = srcArrTomorrow[2];
+      const morningPeriod = srcArrTomorrow[8];
+      const dayPeriod = srcArrTomorrow[14];
+      const eveningPeriod = srcArrTomorrow[20];
+      const srcArrTomorrowLite = [nightPeriod, morningPeriod, dayPeriod, eveningPeriod];
+      const periods = ['Ночь', 'Утро', 'День', 'Вечер'];
+      srcArrTomorrowLite.forEach((el, i) => weather.tomorrow.body[i] = new WeatherStr(periods[i], el.icon, el.precipType, Math.round(el.temperature), el.summary));
+      /*srcArrTomorrow.forEach((el, i) => weather.tomorrow.body[i] = new WeatherStr(getDate(el.time).toLocaleString(lang, {hour: '2-digit', minute: '2-digit'}), el.icon, el.precipType, Math.round(el.temperature), el.summary));*/
 
       // погода на выходные
 
       console.log(weather);
-      console.log(nextDayIndex);
-      console.log(getDate(myWeather.hourly.data[0].time).getHours());
-      console.log(lang);
-      console.log(myWeather.hourly.data[0].time);
+      console.log(srcArrTomorrow);
+
 
       // получение даты из числа в ответе API
       function getDate(time) {
+
         let date = new Date(1000 * time);
 
         return date;
@@ -94,6 +100,8 @@ function getWeather(lat, lng, lang) {
        headerTemplate();
        todayHeaderTemplate()
        todayTemplate();
+       tomorrowHeaderTemplate();
+       tomorrowTemplate();
 
     } //if ends
   } //onready end

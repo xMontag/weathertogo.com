@@ -6,3 +6,4 @@
 
 //= js/templates/headerTemplate.js
 //= js/templates/todayTemplate.js
+//= js/templates/tomorrowTemplate.js
