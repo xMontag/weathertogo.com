@@ -14,8 +14,20 @@
     }
 }
 
-.weekend__day {
+.saturday__header-block, .sunday__header-block {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 
+.js-sunday--none {
+    display: none;
+}
+
+.weekend__day {
+    &::first-letter {
+        text-transform: uppercase;
+    }
 }
 
 .weekend__date {
@@ -28,7 +40,7 @@
     padding: rem(6px) 0;
 }
 
-.weekend__block .weekend__str:nth-child(odd) {
+.weekend__block .weekend__str:nth-child(even) {
     background-color: #f0f3f4;
 }
 

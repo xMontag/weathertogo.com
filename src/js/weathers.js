@@ -37,6 +37,7 @@ function getWeather(lat, lng, lang) {
         let date = getDate(time);
         this.weekday = date.toLocaleString(lang, {weekday: 'long'});
         this.date = date.toLocaleString(lang, {day: '2-digit', month: 'long', year: 'numeric'});
+        //this.date = date.toLocaleString(lang, {day: '2-digit', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric'});
       }
 
       function WeatherStr(title, icon, precipType, temperature, description) {
@@ -52,8 +53,7 @@ function getWeather(lat, lng, lang) {
         this.description = description;
       }
 
-      //console.log(JSON.parse(this.responseText));
-      var myWeather = JSON.parse(this.responseText);
+      const myWeather = JSON.parse(this.responseText);
 
       // погода сейчас
       weather.now.icon = myWeather.currently.icon;
@@ -83,9 +83,58 @@ function getWeather(lat, lng, lang) {
       /*srcArrTomorrow.forEach((el, i) => weather.tomorrow.body[i] = new WeatherStr(getDate(el.time).toLocaleString(lang, {hour: '2-digit', minute: '2-digit'}), el.icon, el.precipType, Math.round(el.temperature), el.summary));*/
 
       // погода на выходные
+      let dayWeek = getDate(myWeather.hourly.data[0].time).getDay();
+      //let dayWeek = 6;  
+      
+        
+      let daysBeforeSaturday;  
+      if(dayWeek < 6) {
+         daysBeforeSaturday = 5 - dayWeek;
+      } else if(dayWeek === 6) {
+         daysBeforeSaturday = 6;
+      }  
+      
+      let daysBeforeSunday;
+      if(dayWeek < 6) {
+         daysBeforeSunday = 6 - dayWeek;
+      } else if(dayWeek === 6) {
+          daysBeforeSunday = 0;
+          sundayHide();
+      }  
+        
+      let saturdayHours = nextDayIndex + daysBeforeSaturday*24;
+      let sundayHours = nextDayIndex + daysBeforeSunday*24;  
+      weather.weekend.saturday.header = new Header(myWeather.hourly.data[saturdayHours].time);
+      weather.weekend.sunday.header = new Header(myWeather.hourly.data[sundayHours].time);
+        
+      // погода на выходные - Суббота
+      let srcArrSaturday;  
+      if(daysBeforeSaturday !== 6) {
+         srcArrSaturday = myWeather.hourly.data.slice(saturdayHours, saturdayHours + 24);
+      } else {
+          srcArrSaturday = myWeather.hourly.data.slice(saturdayHours - nextDayIndex, saturdayHours - nextDayIndex + 24);
+      }    
+        
+      const nightSaturday = srcArrSaturday[2];
+      const morningSaturday = srcArrSaturday[8];
+      const daySaturday = srcArrSaturday[14];
+      const eveningSaturday = srcArrSaturday[20];
+      const srcArrSaturdayLite = [nightSaturday, morningSaturday, daySaturday, eveningSaturday]; 
+      srcArrSaturdayLite.forEach((el, i) => weather.weekend.saturday.body[i] = new WeatherStr(periods[i], el.icon, el.precipType, Math.round(el.temperature), el.summary)); 
+      /*srcArrSaturday.forEach((el, i) => weather.weekend.saturday.body[i] = new WeatherStr(getDate(el.time).toLocaleString(lang, {hour: '2-digit', minute: '2-digit'}), el.icon, el.precipType, Math.round(el.temperature), el.summary));*/
+        
+      // погода на выходные - Воскресенье
+      const srcArrSunday = myWeather.hourly.data.slice(sundayHours, sundayHours + 24);
+      const nightSunday = srcArrSunday[2];
+      const morningSunday = srcArrSunday[8];
+      const daySunday = srcArrSunday[14];
+      const eveningSunday = srcArrSunday[20];
+      const srcArrSundayLite = [nightSunday, morningSunday, daySunday, eveningSunday]; 
+      srcArrSundayLite.forEach((el, i) => weather.weekend.sunday.body[i] = new WeatherStr(periods[i], el.icon, el.precipType, Math.round(el.temperature), el.summary)); 
+      /*srcArrSunday.forEach((el, i) => weather.weekend.sunday.body[i] = new WeatherStr(getDate(el.time).toLocaleString(lang, {hour: '2-digit', minute: '2-digit'}), el.icon, el.precipType, Math.round(el.temperature), el.summary));*/  
 
       console.log(weather);
-      console.log(srcArrTomorrow);
+      console.log(myWeather);
 
 
       // получение даты из числа в ответе API
@@ -102,10 +151,14 @@ function getWeather(lat, lng, lang) {
        todayTemplate();
        tomorrowHeaderTemplate();
        tomorrowTemplate();
+       saturdayHeaderTemplate();
+       saturdayTemplate();
+       sundayHeaderTemplate();
+       sundayTemplate();
 
     } //if ends
   } //onready end
-  const address = 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/606d16650a24656a795100b26c1b1a3e/' + lat + ',' + lng + '?lang=ru&units=si';
+  const address = 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/606d16650a24656a795100b26c1b1a3e/' + lat + ',' + lng + '?extend=hourly&lang=ru&units=si';
   //console.log(address);
   request.open('GET', address, true);
   request.send();
