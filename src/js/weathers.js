@@ -67,14 +67,6 @@ function getWeather(lat, lng, lang) {
       // погода сегодня
       const nextDayIndex = 24 - getDate(myWeather.hourly.data[0].time).getHours();
       weather.today.header = new Header(myWeather.hourly.data[0].time);
-<<<<<<< HEAD
-<<<<<<< HEAD
-      const srcArrToday = myWeather.hourly.data.slice(0, nextDayIndex);
-      srcArrToday.forEach((el, i) => weather.today.body[i] = new WeatherStr(getDate(el.time).toLocaleString(lang, {hour: '2-digit', minute: '2-digit'}), el.icon, el.precipType, Math.round(el.temperature), el.summary));
-
-=======
-=======
->>>>>>> master
       const srcArrToday = myWeather.hourly.data.slice(0, nextDayIndex + 1);
         
       // погода сегодня - шаг 2 часа    
@@ -86,10 +78,6 @@ function getWeather(lat, lng, lang) {
       
       weather.today.body[weather.today.body.length - 1].title = '24:00';  
         
-<<<<<<< HEAD
->>>>>>> develop
-=======
->>>>>>> master
       // погода завтра
       weather.tomorrow.header = new Header(myWeather.hourly.data[nextDayIndex].time);
       const srcArrTomorrow = myWeather.hourly.data.slice(nextDayIndex, nextDayIndex + 25);
@@ -106,8 +94,6 @@ function getWeather(lat, lng, lang) {
       let dayWeek = getDate(myWeather.hourly.data[0].time).getDay();
       //let dayWeek = 6;  
       
-<<<<<<< HEAD
-<<<<<<< HEAD
         
       let daysBeforeSaturday;  
       if(dayWeek < 6) {
@@ -137,43 +123,6 @@ function getWeather(lat, lng, lang) {
           srcArrSaturday = myWeather.hourly.data.slice(saturdayHours - nextDayIndex, saturdayHours - nextDayIndex + 24);
       }    
         
-=======
-        
-=======
-        
->>>>>>> master
-      let daysBeforeSaturday;  
-      if(dayWeek < 6) {
-         daysBeforeSaturday = 5 - dayWeek;
-      } else if(dayWeek === 6) {
-         daysBeforeSaturday = 6;
-      }  
-      
-      let daysBeforeSunday;
-      if(dayWeek < 6) {
-         daysBeforeSunday = 6 - dayWeek;
-      } else if(dayWeek === 6) {
-          daysBeforeSunday = 0;
-          sundayHide();
-      }  
-        
-      let saturdayHours = nextDayIndex + daysBeforeSaturday*24;
-      let sundayHours = nextDayIndex + daysBeforeSunday*24;  
-      weather.weekend.saturday.header = new Header(myWeather.hourly.data[saturdayHours].time);
-      weather.weekend.sunday.header = new Header(myWeather.hourly.data[sundayHours].time);
-        
-      // погода на выходные - Суббота
-      let srcArrSaturday;  
-      if(daysBeforeSaturday !== 6) {
-         srcArrSaturday = myWeather.hourly.data.slice(saturdayHours, saturdayHours + 24);
-      } else {
-          srcArrSaturday = myWeather.hourly.data.slice(saturdayHours - nextDayIndex, saturdayHours - nextDayIndex + 24);
-      }    
-        
-<<<<<<< HEAD
->>>>>>> develop
-=======
->>>>>>> master
       const nightSaturday = srcArrSaturday[2];
       const morningSaturday = srcArrSaturday[8];
       const daySaturday = srcArrSaturday[14];
