@@ -67,9 +67,17 @@ function getWeather(lat, lng, lang) {
       // погода сегодня
       const nextDayIndex = 24 - getDate(myWeather.hourly.data[0].time).getHours();
       weather.today.header = new Header(myWeather.hourly.data[0].time);
-      const srcArrToday = myWeather.hourly.data.slice(0, nextDayIndex);
-      srcArrToday.forEach((el, i) => weather.today.body[i] = new WeatherStr(getDate(el.time).toLocaleString(lang, {hour: '2-digit', minute: '2-digit'}), el.icon, el.precipType, Math.round(el.temperature), el.summary));
-
+      const srcArrToday = myWeather.hourly.data.slice(0, nextDayIndex + 1);
+        
+      // погода сегодня - шаг 2 часа    
+      let arrToday = [];  
+        
+      srcArrToday.forEach((el, i) => arrToday[i] = new WeatherStr(getDate(el.time).toLocaleString(lang, {hour: '2-digit'}), el.icon, el.precipType, Math.round(el.temperature), el.summary));
+      
+      weather.today.body = arrToday.filter(n => n.title % 2 === 0).map(el => new WeatherStr(el.title + ':00', el.icon, el.precipType, el.temperature, el.description)); 
+      
+      weather.today.body[weather.today.body.length - 1].title = '24:00';  
+        
       // погода завтра
       weather.tomorrow.header = new Header(myWeather.hourly.data[nextDayIndex].time);
       const srcArrTomorrow = myWeather.hourly.data.slice(nextDayIndex, nextDayIndex + 25);
