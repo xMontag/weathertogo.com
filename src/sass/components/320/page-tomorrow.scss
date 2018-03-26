@@ -17,7 +17,11 @@
 }
 
 .tomorrow__day {
-
+    
+    &::first-letter {
+        text-transform: uppercase;
+    }
+    
 }
 
 .tomorrow__date {

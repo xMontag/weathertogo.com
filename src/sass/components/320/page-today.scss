@@ -17,7 +17,11 @@
 }
 
 .today__day {
-
+    
+    &::first-letter {
+        text-transform: uppercase;
+    }
+    
 }
 
 .today__date {
