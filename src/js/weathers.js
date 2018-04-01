@@ -68,16 +68,16 @@ function getWeather(lat, lng, lang) {
       const nextDayIndex = 24 - getDate(myWeather.hourly.data[0].time).getHours();
       weather.today.header = new Header(myWeather.hourly.data[0].time);
       const srcArrToday = myWeather.hourly.data.slice(0, nextDayIndex + 1);
-        
-      // погода сегодня - шаг 2 часа    
-      let arrToday = [];  
-        
+
+      // погода сегодня - шаг 2 часа
+      let arrToday = [];
+
       srcArrToday.forEach((el, i) => arrToday[i] = new WeatherStr(getDate(el.time).toLocaleString(lang, {hour: '2-digit'}), el.icon, el.precipType, Math.round(el.temperature), el.summary));
-      
-      weather.today.body = arrToday.filter(n => n.title % 2 === 0).map(el => new WeatherStr(el.title + ':00', el.icon, el.precipType, el.temperature, el.description)); 
-      
-      weather.today.body[weather.today.body.length - 1].title = '24:00';  
-        
+
+      weather.today.body = arrToday.filter(n => n.title % 2 === 0).map(el => new WeatherStr(el.title + ':00', el.icon, el.precipType, el.temperature, el.description));
+
+      weather.today.body[weather.today.body.length - 1].title = '24:00';
+
       // погода завтра
       weather.tomorrow.header = new Header(myWeather.hourly.data[nextDayIndex].time);
       const srcArrTomorrow = myWeather.hourly.data.slice(nextDayIndex, nextDayIndex + 25);
@@ -92,54 +92,54 @@ function getWeather(lat, lng, lang) {
 
       // погода на выходные
       let dayWeek = getDate(myWeather.hourly.data[0].time).getDay();
-      //let dayWeek = 6;  
-      
-        
-      let daysBeforeSaturday;  
+      //let dayWeek = 6;
+
+
+      let daysBeforeSaturday;
       if(dayWeek < 6) {
          daysBeforeSaturday = 5 - dayWeek;
       } else if(dayWeek === 6) {
          daysBeforeSaturday = 6;
-      }  
-      
+      }
+
       let daysBeforeSunday;
       if(dayWeek < 6) {
          daysBeforeSunday = 6 - dayWeek;
       } else if(dayWeek === 6) {
           daysBeforeSunday = 0;
           sundayHide();
-      }  
-        
+      }
+
       let saturdayHours = nextDayIndex + daysBeforeSaturday*24;
-      let sundayHours = nextDayIndex + daysBeforeSunday*24;  
+      let sundayHours = nextDayIndex + daysBeforeSunday*24;
       weather.weekend.saturday.header = new Header(myWeather.hourly.data[saturdayHours].time);
       weather.weekend.sunday.header = new Header(myWeather.hourly.data[sundayHours].time);
-        
+
       // погода на выходные - Суббота
-      let srcArrSaturday;  
+      let srcArrSaturday;
       if(daysBeforeSaturday !== 6) {
          srcArrSaturday = myWeather.hourly.data.slice(saturdayHours, saturdayHours + 24);
       } else {
           srcArrSaturday = myWeather.hourly.data.slice(saturdayHours - nextDayIndex, saturdayHours - nextDayIndex + 24);
-      }    
-        
+      }
+
       const nightSaturday = srcArrSaturday[2];
       const morningSaturday = srcArrSaturday[8];
       const daySaturday = srcArrSaturday[14];
       const eveningSaturday = srcArrSaturday[20];
-      const srcArrSaturdayLite = [nightSaturday, morningSaturday, daySaturday, eveningSaturday]; 
-      srcArrSaturdayLite.forEach((el, i) => weather.weekend.saturday.body[i] = new WeatherStr(periods[i], el.icon, el.precipType, Math.round(el.temperature), el.summary)); 
+      const srcArrSaturdayLite = [nightSaturday, morningSaturday, daySaturday, eveningSaturday];
+      srcArrSaturdayLite.forEach((el, i) => weather.weekend.saturday.body[i] = new WeatherStr(periods[i], el.icon, el.precipType, Math.round(el.temperature), el.summary));
       /*srcArrSaturday.forEach((el, i) => weather.weekend.saturday.body[i] = new WeatherStr(getDate(el.time).toLocaleString(lang, {hour: '2-digit', minute: '2-digit'}), el.icon, el.precipType, Math.round(el.temperature), el.summary));*/
-        
+
       // погода на выходные - Воскресенье
       const srcArrSunday = myWeather.hourly.data.slice(sundayHours, sundayHours + 24);
       const nightSunday = srcArrSunday[2];
       const morningSunday = srcArrSunday[8];
       const daySunday = srcArrSunday[14];
       const eveningSunday = srcArrSunday[20];
-      const srcArrSundayLite = [nightSunday, morningSunday, daySunday, eveningSunday]; 
-      srcArrSundayLite.forEach((el, i) => weather.weekend.sunday.body[i] = new WeatherStr(periods[i], el.icon, el.precipType, Math.round(el.temperature), el.summary)); 
-      /*srcArrSunday.forEach((el, i) => weather.weekend.sunday.body[i] = new WeatherStr(getDate(el.time).toLocaleString(lang, {hour: '2-digit', minute: '2-digit'}), el.icon, el.precipType, Math.round(el.temperature), el.summary));*/  
+      const srcArrSundayLite = [nightSunday, morningSunday, daySunday, eveningSunday];
+      srcArrSundayLite.forEach((el, i) => weather.weekend.sunday.body[i] = new WeatherStr(periods[i], el.icon, el.precipType, Math.round(el.temperature), el.summary));
+      /*srcArrSunday.forEach((el, i) => weather.weekend.sunday.body[i] = new WeatherStr(getDate(el.time).toLocaleString(lang, {hour: '2-digit', minute: '2-digit'}), el.icon, el.precipType, Math.round(el.temperature), el.summary));*/
 
       console.log(weather);
       console.log(myWeather);
@@ -152,7 +152,8 @@ function getWeather(lat, lng, lang) {
 
         return date;
       }
-
+      //текст "Сейчас за окном"
+      textWeather();
       // Компилируем шаблоны
        headerTemplate();
        todayHeaderTemplate()
