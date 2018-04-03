@@ -5,6 +5,7 @@
 //= js/weathers.js
 
 //= js/templates/headerTemplate.js
+//= js/templates/textWeather.js
 //= js/templates/todayTemplate.js
 //= js/templates/tomorrowTemplate.js
 //= js/templates/weekendTemplate.js
