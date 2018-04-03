@@ -3,6 +3,7 @@
 //= js/setActiveLink.js
 //= js/search-city.js
 //= js/weathers.js
+//= js/addFavoriteSity.js
 
 //= js/templates/headerTemplate.js
 //= js/templates/textWeather.js
