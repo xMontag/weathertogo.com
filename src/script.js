@@ -10,3 +10,4 @@
 //= js/templates/todayTemplate.js
 //= js/templates/tomorrowTemplate.js
 //= js/templates/weekendTemplate.js
+//= js/templates/iconWeather.js

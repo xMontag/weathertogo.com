@@ -152,6 +152,9 @@ function getWeather(lat, lng, lang) {
 
         return date;
       }
+
+      //иконки
+      iconWeather();
       //текст "Сейчас за окном"
       textWeather();
       // Компилируем шаблоны
