@@ -2,8 +2,11 @@
 
     .today__precip {
 
-        &::before {
-            margin-right: rem(15px);
+        padding-right: 10%;
+
+        canvas {
+            width: rem(30px);
+            height: rem(30px);
         }
     }
 

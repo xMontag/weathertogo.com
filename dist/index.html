@@ -9,7 +9,9 @@
                       {{#each this}}
                             <div class="today__str">
                                 <p class="today__time">{{title}}</p>
-                                <p class="today__precip">{{precipType}}</p>
+                                <p class="today__precip">
+                                    <canvas class="{{icon}}" width="19" height="19"></canvas>
+                                </p>
                                 <p class="today__temp">{{temperature}}&deg;С</p>
                                 <p class="today__text">{{description}}</p>
                             </div>
@@ -28,7 +30,9 @@
                       {{#each this}}
                             <div class="tomorrow__str">
                                 <p class="tomorrow__time">{{title}}</p>
-                                <p class="tomorrow__precip">{{precipType}}</p>
+                                <p class="tomorrow__precip">
+                                    <canvas class="{{icon}}" width="19" height="19"></canvas>
+                                </p>
                                 <p class="tomorrow__temp">{{temperature}}&deg;С</p>
                                 <p class="tomorrow__text">{{description}}</p>
                             </div>
@@ -42,7 +46,9 @@
                           {{#each this}}
                                 <div class="weekend__str">
                                     <p class="weekend__time">{{title}}</p>
-                                    <p class="weekend__precip">{{precipType}}</p>
+                                    <p class="weekend__precip">
+                                        <canvas class="{{icon}}" width="19" height="19"></canvas>
+                                    </p>
                                     <p class="weekend__temp">{{temperature}}&deg;С</p>
                                     <p class="weekend__text">{{description}}</p>
                                 </div>
@@ -56,7 +62,9 @@
                           {{#each this}}
                                 <div class="weekend__str">
                                     <p class="weekend__time">{{title}}</p>
-                                    <p class="weekend__precip">{{precipType}}</p>
+                                    <p class="weekend__precip">
+                                        <canvas class="{{icon}}" width="19" height="19"></canvas>
+                                    </p>
                                     <p class="weekend__temp">{{temperature}}&deg;С</p>
                                     <p class="weekend__text">{{description}}</p>
                                 </div>

@@ -2,6 +2,7 @@ function iconWeather () {
   let nowWeather = weather.now.icon;
   const skycons = new Skycons({"color": "#fcf9e3"});
   let icon = document.querySelector(".header-visual__icon");
+
   if (nowWeather === "clear-day") {
     icon.id="clear-day";
     skycons.add("clear-day", Skycons.PARTLY_CLOUDY_DAY);
@@ -34,4 +35,5 @@ function iconWeather () {
     skycons.add("partly-cloudy-night", Skycons.PARTLY_CLOUDY_NIGHT);
   }
   skycons.play();
+
 }

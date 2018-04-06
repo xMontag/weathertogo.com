@@ -17,11 +17,11 @@
 }
 
 .tomorrow__day {
-    
+
     &::first-letter {
         text-transform: uppercase;
     }
-    
+
 }
 
 .tomorrow__date {
@@ -47,17 +47,7 @@
 
     flex-basis: 23%;
     display: flex;
-
-    &::before {
-        margin-right: rem(8px);
-        background-image: url(images/thunderstorm.png);
-        background-repeat: no-repeat;
-        background-position: left rem(3px);
-        width: rem(10px);
-        height: rem(10px);
-        display: block;
-        content: "";
-    }
+    justify-content: center;
 }
 
 .tomorrow__temp {
