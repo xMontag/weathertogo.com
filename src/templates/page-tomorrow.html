@@ -21,7 +21,9 @@
           {{#each this}}
                 <div class="tomorrow__str">
                     <p class="tomorrow__time">{{title}}</p>
-                    <p class="tomorrow__precip">{{precipType}}</p>
+                    <p class="tomorrow__precip">
+                        <canvas class="{{icon}}" width="19" height="19"></canvas>
+                    </p>
                     <p class="tomorrow__temp">{{temperature}}&deg;С</p>
                     <p class="tomorrow__text">{{description}}</p>
                 </div>

@@ -7,7 +7,7 @@
 
             </div>
       </div>
-     
+
       <div class="weekend__block js-sunday">
             <div class="weekend__title js-sunday__title weekend__title--margin">
 
@@ -33,14 +33,16 @@
               {{#each this}}
                     <div class="weekend__str">
                         <p class="weekend__time">{{title}}</p>
-                        <p class="weekend__precip">{{precipType}}</p>
+                        <p class="weekend__precip">
+                            <canvas class="{{icon}}" width="19" height="19"></canvas>
+                        </p>
                         <p class="weekend__temp">{{temperature}}&deg;С</p>
                         <p class="weekend__text">{{description}}</p>
                     </div>
               {{/each}}
           </div>
     </script>
-    
+
     <script id="sunday-header-template" type="text/x-handlebars-template">
          <div class="sunday__header-block">
 
@@ -55,7 +57,9 @@
               {{#each this}}
                     <div class="weekend__str">
                         <p class="weekend__time">{{title}}</p>
-                        <p class="weekend__precip">{{precipType}}</p>
+                        <p class="weekend__precip">
+                            <canvas class="{{icon}}" width="19" height="19"></canvas>
+                        </p>
                         <p class="weekend__temp">{{temperature}}&deg;С</p>
                         <p class="weekend__text">{{description}}</p>
                     </div>

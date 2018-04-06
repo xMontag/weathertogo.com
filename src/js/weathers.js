@@ -152,8 +152,12 @@ function getWeather(lat, lng, lang) {
 
         return date;
       }
+
+      //иконка в хедере
+      iconWeather();
       //текст "Сейчас за окном"
       textWeather();
+
       // Компилируем шаблоны
        headerTemplate();
        todayHeaderTemplate()
@@ -164,6 +168,11 @@ function getWeather(lat, lng, lang) {
        saturdayTemplate();
        sundayHeaderTemplate();
        sundayTemplate();
+
+       // Иконки в page
+       iconTodayWeather();
+       iconTomorowWeather();
+       iconWeekendWeather();
 
     } //if ends
   } //onready end

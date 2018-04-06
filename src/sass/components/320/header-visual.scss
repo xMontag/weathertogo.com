@@ -2,6 +2,7 @@
     @include flex-around;
     padding-top: rem(20px);
     padding-bottom: rem(33px);
+    width: 100%;
 }
 
 .header-visual__img {
@@ -17,11 +18,7 @@
 }
 
 .header-visual__precip {
-    background-image: url(images/icon.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    width: rem(80px);
-    height: rem(65px);
+
 }
 
 .header-visual__title {
