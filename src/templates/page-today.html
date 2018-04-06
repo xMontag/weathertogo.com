@@ -12,7 +12,9 @@
           {{#each this}}
                 <div class="today__str">
                     <p class="today__time">{{title}}</p>
-                    <p class="today__precip">{{precipType}}</p>
+                    <p class="today__precip">
+                        <canvas class="{{icon}}" width="19" height="19"></canvas>
+                    </p>
                     <p class="today__temp">{{temperature}}&deg;С</p>
                     <p class="today__text">{{description}}</p>
                 </div>
