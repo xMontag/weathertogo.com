@@ -9,4 +9,9 @@
     border-radius: rem(7px);
     color: $title-color;
     cursor: pointer;
+
+    &:hover {
+        text-decoration: none;
+        background-color: hsla(330, 32%, 42%, 0.8);
+    }
 }

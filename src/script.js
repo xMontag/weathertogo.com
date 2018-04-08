@@ -5,6 +5,9 @@
 //= js/weathers.js
 //= js/addFavoriteSity.js
 //= js/skyconType.js
+//= js/addSity.js
+//= js/addCalendar.js
+//= js/delSity.js
 
 //= js/templates/headerTemplate.js
 //= js/templates/textWeather.js
