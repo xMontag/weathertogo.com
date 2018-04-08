@@ -138,11 +138,15 @@ function getWeather(lat, lng, lang) {
       const daySunday = srcArrSunday[14];
       const eveningSunday = srcArrSunday[20];
       const srcArrSundayLite = [nightSunday, morningSunday, daySunday, eveningSunday];
-      srcArrSundayLite.forEach((el, i) => weather.weekend.sunday.body[i] = new WeatherStr(periods[i], el.icon, el.precipType, Math.round(el.temperature), el.summary));
-      /*srcArrSunday.forEach((el, i) => weather.weekend.sunday.body[i] = new WeatherStr(getDate(el.time).toLocaleString(lang, {hour: '2-digit', minute: '2-digit'}), el.icon, el.precipType, Math.round(el.temperature), el.summary));*/
+      if(dayWeek !== 0) {
+          srcArrSundayLite.forEach((el, i) => weather.weekend.sunday.body[i] = new WeatherStr(periods[i], el.icon, el.precipType, Math.round(el.temperature), el.summary));
+        } else {
+          srcArrSunday.forEach((el, i) => weather.weekend.sunday.body[i] = new WeatherStr(getDate(el.time).toLocaleString(lang, {hour: '2-digit', minute: '2-digit'}), el.icon, el.precipType, Math.round(el.temperature), el.summary));
+        }
 
       console.log(weather);
       console.log(myWeather);
+      console.log(weather.weekend.sunday.body[13]);
 
 
       // получение даты из числа в ответе API

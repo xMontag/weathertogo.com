@@ -7,8 +7,11 @@ const currentPlace = document.getElementById("header-visual__city");
 // координаты Киева
 const positions = {
            latPositions: '',
-           lngPositions: ''
+           lngPositions: '',
+           sityFullName: 'Киев, Украина'
          };
+
+const addsitySity = document.querySelector(".add-sity__sity");
 
 google.maps.event.addListener(autocomplete, "place_changed", function () {
     // в этой переменной получаем объект город
@@ -21,6 +24,10 @@ google.maps.event.addListener(autocomplete, "place_changed", function () {
 
     positions.latPositions = place.geometry.location.lat();
     positions.lngPositions = place.geometry.location.lng();
-   
+    positions.sityFullName = place.formatted_address;
+
+    addsitySity.textContent = positions.sityFullName;
+
+    console.log(place.formatted_address);
     getWeather(positions.latPositions, positions.lngPositions, 'ru');
 })
