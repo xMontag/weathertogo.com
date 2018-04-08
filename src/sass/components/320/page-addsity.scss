@@ -27,7 +27,6 @@
     flex-basis: 28%;
     color: $base-color;
     @include padding-border;
-    background-image: url(images/date.png);
     background-repeat: no-repeat;
     background-position: 90% center;
     cursor: pointer;
@@ -58,3 +57,19 @@
 .add-sity__look {
     color: $brand-color;
 }
+
+.add-sity__input {
+    background-color: hsla(197, 14%, 90%, 0.2);
+    width: 100%;
+    border: 2px solid #e2e7e9;
+    padding: rem(9px);
+    border-radius: rem(6px);
+    color: $base-color;
+    margin-top: 1rem;
+}
+
+.add-sity__input::-webkit-input-placeholder {color: $base-color;}
+.add-sity__input::-moz-placeholder          {color: $base-color;}/* Firefox 19+ */
+.add-sity__input:-moz-placeholder           {color: $base-color;}/* Firefox 18- */
+.add-sity__input:-ms-input-placeholder      {color: $base-color;}
+
