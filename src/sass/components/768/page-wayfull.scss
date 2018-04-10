@@ -2,37 +2,11 @@
 
         .wayfull__precip {
 
-            &::before {
-                margin-right: rem(15px);
-                background-image: url(images/thunderstorm.png);
-                background-repeat: no-repeat;
-                width: rem(16px);
-                height: rem(16px);
-                display: block;
-                content: "";
-                background-size: contain;
-            }
+            padding-right: 10%;
 
-            &--sun::before {
-                background-image: url(images/sun.png);
-                margin-right: rem(15px);
-                background-repeat: no-repeat;
-                width: rem(16px);
-                height: rem(16px);
-                display: block;
-                content: "";
-                background-size: contain;
-            }
-
-            &--moon::before {
-                background-image: url(images/moon.png);
-                margin-right: rem(15px);
-                background-repeat: no-repeat;
-                width: rem(16px);
-                height: rem(16px);
-                display: block;
-                content: "";
-                background-size: contain;
+            canvas {
+                width: rem(30px);
+                height: rem(30px);
             }
 
     }

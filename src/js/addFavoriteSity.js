@@ -8,6 +8,17 @@ function jsFirstSity(evt) {
     evt.preventDefault();
     currentPlace.textContent = firstSity.textContent;
     getWeather(50.4501, 30.523400000000038, 'ru');
+    if(weatherWay.start !== undefined) {
+        weatherWay.start.lat = '50.4501';
+        weatherWay.start.lng = '30.523400000000038';
+        weatherWay.start.sityName = 'Киев';
+
+        if(inputTime.value !== '') {
+           getWeatherWayFirst(weatherWay.start.lat, weatherWay.start.lng, dateConvert(inputTime.value), 'ru');
+        }
+
+    }
+
 }
 
 function jsSecondSity(evt) {
@@ -16,6 +27,17 @@ function jsSecondSity(evt) {
     getWeather(48.46471700000001, 35.04618299999993, 'ru');
     positions.sityFullName = 'Днипро, Днепропетровская область, Украина';
     addsitySity.textContent = positions.sityFullName;
+    if(weatherWay.start !== undefined) {
+        weatherWay.start.lat = '48.46471700000001';
+        weatherWay.start.lng = '35.04618299999993';
+        weatherWay.start.sityName = 'Днипро';
+
+        if(inputTime.value !== '') {
+             getWeatherWayFirst(weatherWay.start.lat, weatherWay.start.lng, dateConvert(inputTime.value), 'ru');
+        }
+
+    }
+
 }
 
 function jsThirdSity(evt) {
@@ -24,6 +46,17 @@ function jsThirdSity(evt) {
     getWeather(49.83968300000001, 24.029717000000005, 'ru');
     positions.sityFullName = 'Львов, Львовская область, Украина';
     addsitySity.textContent = positions.sityFullName;
+    if(weatherWay.start !== undefined) {
+        weatherWay.start.lat = '49.83968300000001';
+        weatherWay.start.lng = '24.029717000000005';
+        weatherWay.start.sityName = 'Львов';
+
+        if(inputTime.value !== '') {
+           getWeatherWayFirst(weatherWay.start.lat, weatherWay.start.lng, dateConvert(inputTime.value), 'ru');
+        }
+
+    }
+
 }
 
 function jsFourthSity(evt) {
@@ -32,6 +65,17 @@ function jsFourthSity(evt) {
     getWeather(49.9935, 36.230383000000074, 'ru');
     positions.sityFullName = 'Харьков, Харьковская область, Украина';
     addsitySity.textContent = positions.sityFullName;
+    if(weatherWay.start !== undefined) {
+        weatherWay.start.lat = '49.9935';
+        weatherWay.start.lng = '36.230383000000074';
+        weatherWay.start.sityName = 'Харьков';
+
+        if(inputTime.value !== '') {
+           getWeatherWayFirst(weatherWay.start.lat, weatherWay.start.lng, dateConvert(inputTime.value), 'ru');
+        }
+
+    }
+
 }
 
 function jsFifthSity(evt) {
@@ -40,6 +84,17 @@ function jsFifthSity(evt) {
     getWeather(46.482526, 30.723309500000028, 'ru');
     positions.sityFullName = 'Одесса, Одесская область, Украина';
     addsitySity.textContent = positions.sityFullName;
+    if(weatherWay.start !== undefined) {
+        weatherWay.start.lat = '46.482526';
+        weatherWay.start.lng = '30.723309500000028';
+        weatherWay.start.sityName = 'Одесса';
+
+        if(inputTime.value !== '') {
+           getWeatherWayFirst(weatherWay.start.lat, weatherWay.start.lng, dateConvert(inputTime.value), 'ru');
+        }
+
+    }
+
 }
 
 firstSity.addEventListener("click", jsFirstSity);
