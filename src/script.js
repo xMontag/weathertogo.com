@@ -8,6 +8,9 @@
 //= js/addSity.js
 //= js/addCalendar.js
 //= js/delSity.js
+//= js/weathersWay.js
+//= js/weathersWayFirst.js
+//= js/goFullWay.js
 
 //= js/templates/headerTemplate.js
 //= js/templates/textWeather.js
@@ -18,3 +21,5 @@
 //= js/templates/iconTodayWeather.js
 //= js/templates/iconTomorrowWeather.js
 //= js/templates/iconWeekendWeather.js
+//= js/templates/lookWayTemplate.js
+//= js/templates/iconWayFull.js

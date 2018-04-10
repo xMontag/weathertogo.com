@@ -46,43 +46,9 @@
 }
 
 .wayfull__precip {
-
     flex-basis: 23%;
     display: flex;
-    align-items: center;
-
-    &::before {
-        margin-right: rem(8px);
-        background-image: url(images/thunderstorm.png);
-        background-repeat: no-repeat;
-        width: rem(10px);
-        height: rem(10px);
-        display: block;
-        content: "";
-    }
-
-    &--sun:before {
-        background-image: url(images/sun.png);
-        margin-right: rem(8px);
-        background-repeat: no-repeat;
-        width: rem(10px);
-        height: rem(10px);
-        display: block;
-        content: "";
-        background-size: contain;
-    }
-
-    &--moon:before {
-        background-image: url(images/moon.png);
-        margin-right: rem(8px);
-        background-repeat: no-repeat;
-        width: rem(10px);
-        height: rem(10px);
-        display: block;
-        content: "";
-        background-size: contain;
-    }
-
+    justify-content: center;
 }
 
 .wayfull__temp {
