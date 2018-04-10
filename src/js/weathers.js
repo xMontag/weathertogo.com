@@ -146,7 +146,6 @@ function getWeather(lat, lng, lang) {
 
       console.log(weather);
       console.log(myWeather);
-      console.log(weather.weekend.sunday.body[13]);
 
 
       // получение даты из числа в ответе API

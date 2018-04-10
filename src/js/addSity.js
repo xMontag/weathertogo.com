@@ -8,7 +8,11 @@ const autocompleteAddCity = new google.maps.places.Autocomplete(addCity, {
 
 const positionsAddCity = {
            sityFullName: '',
-           lengthArrSity: 1
+           sityName: '',
+           lengthArrSity: 1,
+           lat: '',
+           lng: '',
+           count: ''
          };
 
 const htmlCityBlock = document.querySelector(".js-add-sity__block");
@@ -18,7 +22,7 @@ function addCityBlock(address, length) {
   let datepickerID = `datepicker_${length}`;
 
    const itemCity = document.createElement('div');
-   itemCity.classList.add("add-sity__str");
+   itemCity.classList.add("add-sity__str", `js-count_${length}`);
    let cityText = `
 
         <p class="add-sity__sity">${address}</p>
@@ -42,6 +46,10 @@ function addCityBlock(address, length) {
         format: 'D.MM.YYYY',
         onSelect: function() {
             this.getMoment().format('Do MM.YYYY');
+            let inputTimes = document.getElementById(datepickerID);
+            positionsAddCity.count = length;
+            getWeatherWay(weatherWay[`start_${length}`]['lat'], weatherWay[`start_${length}`]['lng'], dateConvert(inputTimes.value), 'ru');
+            console.log(inputTimes.value);
         },
         i18n: {
             previousMonth : 'Previous Month',
@@ -52,6 +60,15 @@ function addCityBlock(address, length) {
         }
     });
 
+   weatherWay[`start_${length}`] = {};
+   weatherWay[`start_${length}`]['lat'] = positionsAddCity.lat;
+   weatherWay[`start_${length}`]['lng'] = positionsAddCity.lng;
+   weatherWay[`start_${length}`]['sityName'] = positionsAddCity.sityName;
+   weatherWay[`start_${length}`]['toDay'] = {};
+   weatherWay[`start_${length}`]['toDay']['header'] = {};
+   weatherWay[`start_${length}`]['toDay']['body'] = [];
+
+   console.log(weatherWay);
 }
 
 google.maps.event.addListener(autocompleteAddCity, "place_changed", function () {
@@ -61,8 +78,12 @@ google.maps.event.addListener(autocompleteAddCity, "place_changed", function () 
     // -------------------- отладочный блок -------------------
     //console.log(placeAddCity);
 
-    //const cityStrs = document.querySelectorAll(".add-sity__str");
-    addCityBlock(placeAddCity.formatted_address, positionsAddCity.lengthArrSity)
+    positionsAddCity.lat = placeAddCity.geometry.location.lat();
+    positionsAddCity.lng = placeAddCity.geometry.location.lng();
+    positionsAddCity.sityName = placeAddCity.name;
+
+    addCityBlock(placeAddCity.formatted_address, positionsAddCity.lengthArrSity);
+
     addCity.classList.add("js-none");
 
     positionsAddCity.lengthArrSity += 1;
@@ -73,8 +94,19 @@ const addCityButton = document.querySelector(".add-sity__button");
 
 const addCityInput = event => {
     event.preventDefault();
-    addCity.classList.remove("js-none");
-    addCity.value = '';
+    const addSityBlock = document.querySelector(".js-add-sity__block");
+    const arrNotEmpty = document.querySelectorAll(".js-calendar");
+
+    if(addSityBlock.children.length === 0) {
+       addCity.classList.remove("js-none");
+       addCity.value = '';
+    } else if(arrNotEmpty[arrNotEmpty.length - 1].value === '' && arrNotEmpty !== undefined) {
+       alert('Добавьте дату у последнего города');
+    } else {
+       addCity.classList.remove("js-none");
+       addCity.value = '';
+    }
+
 };
 
 addCityButton.addEventListener("click", addCityInput);
