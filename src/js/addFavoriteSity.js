@@ -13,7 +13,7 @@ function jsFirstSity(evt) {
         weatherWay.start.lng = '30.523400000000038';
         weatherWay.start.sityName = 'Киев';
 
-        if(inputTime.value !== '') {
+        if(inputTime !== undefined) {
            getWeatherWayFirst(weatherWay.start.lat, weatherWay.start.lng, dateConvert(inputTime.value), 'ru');
         }
 
@@ -32,8 +32,8 @@ function jsSecondSity(evt) {
         weatherWay.start.lng = '35.04618299999993';
         weatherWay.start.sityName = 'Днипро';
 
-        if(inputTime.value !== '') {
-             getWeatherWayFirst(weatherWay.start.lat, weatherWay.start.lng, dateConvert(inputTime.value), 'ru');
+        if(inputTime !== undefined) {
+           getWeatherWayFirst(weatherWay.start.lat, weatherWay.start.lng, dateConvert(inputTime.value), 'ru');
         }
 
     }
@@ -51,7 +51,7 @@ function jsThirdSity(evt) {
         weatherWay.start.lng = '24.029717000000005';
         weatherWay.start.sityName = 'Львов';
 
-        if(inputTime.value !== '') {
+        if(inputTime !== undefined) {
            getWeatherWayFirst(weatherWay.start.lat, weatherWay.start.lng, dateConvert(inputTime.value), 'ru');
         }
 
@@ -70,7 +70,7 @@ function jsFourthSity(evt) {
         weatherWay.start.lng = '36.230383000000074';
         weatherWay.start.sityName = 'Харьков';
 
-        if(inputTime.value !== '') {
+        if(inputTime !== undefined) {
            getWeatherWayFirst(weatherWay.start.lat, weatherWay.start.lng, dateConvert(inputTime.value), 'ru');
         }
 
@@ -89,7 +89,7 @@ function jsFifthSity(evt) {
         weatherWay.start.lng = '30.723309500000028';
         weatherWay.start.sityName = 'Одесса';
 
-        if(inputTime.value !== '') {
+        if(inputTime !== undefined) {
            getWeatherWayFirst(weatherWay.start.lat, weatherWay.start.lng, dateConvert(inputTime.value), 'ru');
         }
 
