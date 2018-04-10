@@ -28,7 +28,7 @@ function addCityBlock(address, length) {
         <p class="add-sity__sity">${address}</p>
         <p class="add-sity__arrival">приезд/отъезд</p>
         <p class="add-sity__date">
-            <input type="text" class="js-calendar" id="${datepickerID}" placeholder="Дата" readonly style="cursor: pointer;">
+            <input type="text" class="js-calendar" id="${datepickerID}" placeholder="Дата" readonly>
         </p>
         <p class="add-sity__del"></p>
 
