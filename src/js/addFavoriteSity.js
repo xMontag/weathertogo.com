@@ -249,6 +249,8 @@ function jsFirstSity(evt) {
     evt.preventDefault();
     currentPlace.textContent = firstSity.textContent;
     getWeather(citysFavorite.firstSity.lat, citysFavorite.firstSity.lng, 'ru');
+    positions.sityFullName = citysFavorite.firstSity.sityFullName;
+    addsitySity.textContent = positions.sityFullName;
     if(weatherWay.start !== undefined) {
         weatherWay.start.lat = citysFavorite.firstSity.lat;
         weatherWay.start.lng = citysFavorite.firstSity.lng;
