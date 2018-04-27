@@ -8,7 +8,9 @@ const currentPlace = document.getElementById("header-visual__city");
 const positions = {
            latPositions: '',
            lngPositions: '',
-           sityFullName: 'Киев, Украина'
+           sityFullName: 'Киев, Украина',
+           sityName: 'Киев',
+           count: 1
          };
 
 const addsitySity = document.querySelector(".add-sity__sity");
@@ -25,6 +27,7 @@ google.maps.event.addListener(autocomplete, "place_changed", function () {
     positions.latPositions = place.geometry.location.lat();
     positions.lngPositions = place.geometry.location.lng();
     positions.sityFullName = place.formatted_address;
+    positions.sityName = place.name;
 
     if(inputTime === undefined || weatherWay.start !== undefined) {
           weatherWay.start.lat = place.geometry.location.lat();
@@ -36,4 +39,5 @@ google.maps.event.addListener(autocomplete, "place_changed", function () {
 
     console.log(place.formatted_address);
     getWeather(positions.latPositions, positions.lngPositions, 'ru');
+    addLocStor();
 })
