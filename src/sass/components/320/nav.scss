@@ -7,11 +7,13 @@
 .nav {
     @include flex-around;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .nav__link {
     color:  $title-color;
     text-decoration: none;
+    padding-right: rem(5px);
 
     &:hover {
         text-decoration: underline;
