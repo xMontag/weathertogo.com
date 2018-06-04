@@ -1,5 +1,5 @@
 function iconWayFull() {
-  let skycons = new Skycons({"color": "#8f496c"});
+  let skycons = new Skycons({"color": "#009587"});
   let icons = document.querySelectorAll(".wayfull__precip canvas");
 
   icons.forEach(function(elem) {

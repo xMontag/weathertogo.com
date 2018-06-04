@@ -8,15 +8,24 @@
 }
 
 .header__input {
-    background-color: #cfaba1;
+    background-color: #e3f2f1;
     width: 100%;
     border: 0;
     padding: rem(9px);
     border-radius: rem(6px);
-    color: $title-color;
+    color: $base-color;
+
+    &:active {
+       outline: none;
+    }
+
+    &:focus {
+       outline: none;
+    }
+
 }
 
-.header__input::-webkit-input-placeholder {color: $title-color;}
-.header__input::-moz-placeholder          {color: $title-color;}/* Firefox 19+ */
-.header__input:-moz-placeholder           {color: $title-color;}/* Firefox 18- */
-.header__input:-ms-input-placeholder      {color: $title-color;}
+.header__input::-webkit-input-placeholder {color: $base-color;}
+.header__input::-moz-placeholder          {color: $base-color;}/* Firefox 19+ */
+.header__input:-moz-placeholder           {color: $base-color;}/* Firefox 18- */
+.header__input:-ms-input-placeholder      {color: $base-color;}

@@ -3,11 +3,11 @@
 }
 
 .today__title {
-    background-color: #e2e7e9;
+    background-color: #e3f2f1;
     @include flex-between;
     padding: rem(6px) rem(8px);
     border-radius: rem(4px);
-    color: $base-color;
+    color: #424e59;
 }
 
 .today__header-block {
@@ -30,7 +30,7 @@
 
 .today__str {
     display: flex;
-    color: $brand-color;
+    color: $base-color;
     padding: rem(6px) 0;
 }
 
@@ -53,6 +53,7 @@
 
 .today__temp {
     flex-basis: 15%;
+    color: $title-color;
 }
 
 .today__text {

@@ -1,5 +1,5 @@
 function iconTodayWeather() {
-  let skycons = new Skycons({"color": "#8f496c"});
+  let skycons = new Skycons({"color": "#009587"});
   let icons = document.querySelectorAll(".today__precip canvas");
 
   icons.forEach(function(elem) {

@@ -3,15 +3,18 @@
 }
 
 .button-way__button {
-    background-color: $brand-color;
+    background-color: #ff5621;
     padding: rem(7px) rem(30px);
     border: 0;
     border-radius: rem(7px);
-    color: $title-color;
+    color: #fff;
     cursor: pointer;
 
     &:hover {
         text-decoration: none;
-        background-color: hsla(330, 32%, 42%, 0.8);
+        background-color: hsla(14, 100%, 56%, 0.8);
     }
+
+
+
 }

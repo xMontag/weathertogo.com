@@ -9,6 +9,7 @@
     background-image: url(images/character.png);
     background-repeat: no-repeat;
     background-position: top center;
+    background-size: contain;
     flex-basis: 45%;
 }
 
@@ -22,7 +23,7 @@
 }
 
 .header-visual__title {
-    color: $brand-color;
+    color: $base-color;
     margin-top: rem(16px);
     text-align: center;
 }
@@ -34,6 +35,6 @@
 }
 
 .header-visual__text {
-    color: #424e59;
+    color: $base-color;
     text-align: justify;
 }

@@ -13,13 +13,13 @@
 
 .add-sity__sity {
     flex-basis: 45%;
-    color: $base-color;
+    color: #424e59;
     @include padding-border;
 }
 
 .add-sity__arrival {
     flex-basis: 22%;
-    color: $brand-color;
+    color: $title-color;
     padding-left: rem(7px);
 }
 
@@ -48,14 +48,14 @@
 }
 
 .add-sity__button {
-    color: $base-color;
+    color: #424e59;
     @include padding-border;
     cursor: pointer;
     border: 0;
 }
 
 .add-sity__look {
-    color: $brand-color;
+    color: $title-color;
 }
 
 .add-sity__input {

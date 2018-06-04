@@ -1,6 +1,6 @@
 function iconWeather () {
   let nowWeather = weather.now.icon;
-  const skycons = new Skycons({"color": "#fcf9e3"});
+  const skycons = new Skycons({"color": "#d1d2d3"});
   let icon = document.querySelector(".header-visual__icon");
 
   if (nowWeather === "clear-day") {
