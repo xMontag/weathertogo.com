@@ -1,7 +1,8 @@
 // В переменные получаем установленные пакеты
 const gulp          = require('gulp'),
       browserSync   = require('browser-sync').create(),
-      sass          = require('gulp-sass'),
+      //sass          = require('gulp-sass'),
+      sass          = require('gulp-sass')(require('sass')),
       autoprefixer  = require('gulp-autoprefixer'),
       cssnano       = require('gulp-cssnano'),
       mmq           = require('gulp-merge-media-queries'),
@@ -21,7 +22,7 @@ gulp.task('html', () => {
     .pipe(rigger())
     // минифицируем html
     .pipe(htmlmin({
-      collapseWhitespace: true
+      collapseWhitespace: false
     }))
     // выкидываем html в папку dist
     .pipe(gulp.dest('./dist'))
@@ -71,13 +72,18 @@ gulp.task('img', () => {
   // Берем все картинки из папки img
   return gulp.src('./src/images/**/*.+(png|jpg|gif|svg)')
     // Пробуем оптимизировать
-    .pipe(imagemin(
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.mozjpeg({quality: 75, progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
       imagemin.svgo({
-        plugins: [
-          { removeViewBox: true },
-          { cleanupIDs: false }
-        ]
-      })))
+          plugins: [
+              {removeViewBox: true},
+              {cleanupIDs: false}
+          ]
+      })
+  ]
+      ))
     // Выкидываем в папку dist/img
     .pipe(gulp.dest('./dist/images'))
     // Говорим browser-sync о том что пора перезагрузить барузер так как файл изменился
@@ -120,18 +126,26 @@ gulp.task('server', () => {
     // Говорим спрятать надоедливое окошко обновления в браузере
     notify: false
   });
+  gulp.watch('./src/**/*.html', gulp.parallel('html'));
+  gulp.watch('./src/sass/**/*.scss', gulp.parallel('css'));
+  gulp.watch('./src/**/*.js', gulp.parallel('js'));
+  gulp.watch('./src/images/**/*.*', gulp.parallel('img'));
+  gulp.watch('./src/fonts/**/*.*', gulp.parallel('fonts'));
 });
 
 // Таск удаления папки dist, будем вызывать 1 раз перед началом сборки
 gulp.task('del:dist', () => {
-  return del.sync('./dist');
+  //return del.sync('./dist');
+  return del('./dist');
 });
 
 // Таск который 1 раз собирает все статические файлы
-gulp.task('build', ['html', 'css', 'js', 'img', 'fonts']);
+//gulp.task('build', ['html', 'css', 'js', 'img', 'fonts']);
+gulp.task('build', gulp.series('html', 'css', 'js', 'img', 'fonts'));
 
 // Главный таск, сначала удаляет папку dist,
 // потом собирает статику, после чего поднимает сервер
 // и затем запускает слежение за файлами
 // Запускается из корня проекта командой npm start
-gulp.task('start', ['del:dist', 'build', 'server', 'watch']);
+//gulp.task('start', ['del:dist', 'build', 'server', 'watch']);
+gulp.task('start', gulp.series('del:dist', 'build', 'server'));
