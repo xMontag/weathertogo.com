@@ -1,86 +1,11 @@
-<!DOCTYPE html>
-<html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Weather To Go!</title>
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500" rel="stylesheet">
-    <link rel="stylesheet" href="main.css">
-</head>
-
-<body class="color__back-ground">
-    <div class="wrapper">
-
-        <header class="header">
-                <!--<div class="head-lang">
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Weather To Go!</title><link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500" rel="stylesheet"><link rel="stylesheet" href="main.css"></head><body class="color__back-ground"><div class="wrapper"><header class="header"><!--<div class="head-lang">
                     <a href="#" class="head-ukr">ukr</a>
                     <a href="#" class="head-rus">rus</a>
-                </div>-->
-                <h1 class="header__title">Weather To Go!</h1>
-                <p class="header__subtitle">Каждый день будет твой!</p>
-            <div class="header__form">
-            <!-- <form class="header__search" action="/">
+                </div>--><h1 class="header__title">Weather To Go!</h1><p class="header__subtitle">Каждый день будет твой!</p><div class="header__form"><!-- <form class="header__search" action="/">
                 <input class="header__input" id="search-city" type="search" name="search" placeholder="найти город...">
-            </form> -->
-            
-            <div class="header__search">
-                <input class="header__input" id="search-city" type="search" placeholder="найти город...">
-            </div>
-            </div>
-            <div class="header__nav">
-                <nav class="nav">
-                    <a class="nav__link js-firstSity" href="/">Киев</a>
-                    <a class="nav__link js-secondSity" href="/">Днепр</a>
-                    <a class="nav__link js-thirdSity" href="/">Львов</a>
-                    <a class="nav__link js-fourthSity" href="/">Харьков</a>
-                    <a class="nav__link js-fifthSity" href="/">Одесса</a>
-                </nav>
-                <div class="header__button">
-                <a class="button-way__button" href="#addcity">В дорогу</a>
-                </div>
-            </div>
-            <section class="header-visual">
-                <div class="header-visual__img">
-                </div>
-                
-                <div class="header-visual__block">
-                    <div class="header-visual__precip">
-                        <canvas class="header-visual__icon" id="" width="128" height="128"></canvas>
-                    </div>
-                    <h3 class="header-visual__title" id="header-visual__city">Киев</h3>
-                    <div class="header-visual__js-block">
-                
-                    </div>
-                    <div class="header-visual__text"></div>
-                </div>
-                <script id="header-template" type="text/x-handlebars-template">
-                     <div class="header-visual__js-templ">
+            </form> --><div class="header__search"><input class="header__input" id="search-city" type="search" placeholder="найти город..."></div></div><div class="header__nav"><nav class="nav"><a class="nav__link js-firstSity" href="/">Киев</a> <a class="nav__link js-secondSity" href="/">Днепр</a> <a class="nav__link js-thirdSity" href="/">Львов</a> <a class="nav__link js-fourthSity" href="/">Харьков</a> <a class="nav__link js-fifthSity" href="/">Одесса</a></nav><div class="header__button"><a class="button-way__button" href="#addcity">В дорогу</a></div></div><section class="header-visual"><div class="header-visual__img"></div><div class="header-visual__block"><div class="header-visual__precip"><canvas class="header-visual__icon" id="" width="128" height="128"></canvas></div><h3 class="header-visual__title" id="header-visual__city">Киев</h3><div class="header-visual__js-block"></div><div class="header-visual__text"></div></div><script id="header-template" type="text/x-handlebars-template"><div class="header-visual__js-templ">
                         <div class="header-visual__temp">{{temperature}}&deg;C</div>
-                     </div>
-                </script>
-            </section>
-        </header>
-
-        <div class="page">
-            <div class="page__menu" id="addcity">
-                <a class="menu__link menu__link--active" href="/">Сегодня</a>
-                <a class="menu__link" href="/">Завтра</a>
-                <a class="menu__link" href="/">Выходные</a>
-                <a class="menu__link" href="/">В дорогу</a>
-            </div>
-            <div class="today js-page js-block">
-               <div class="today__title">
-            
-               </div>
-               <div class="today__main">
-            
-               </div>
-            </div>
-            
-            <script id="today-template" type="text/x-handlebars-template">
-                 <div class="today__block">
+                     </div></script></section></header><div class="page"><div class="page__menu" id="addcity"><a class="menu__link menu__link--active" href="/">Сегодня</a> <a class="menu__link" href="/">Завтра</a> <a class="menu__link" href="/">Выходные</a> <a class="menu__link" href="/">В дорогу</a></div><div class="today js-page js-block"><div class="today__title"></div><div class="today__main"></div></div><script id="today-template" type="text/x-handlebars-template"><div class="today__block">
                       {{#each this}}
                             <div class="today__str">
                                 <p class="today__time">{{title}}</p>
@@ -91,37 +16,17 @@
                                 <p class="today__text">{{description}}</p>
                             </div>
                       {{/each}}
-                  </div>
-            </script>
-            
-            <script id="today-header-template" type="text/x-handlebars-template">
-                 <div class="today__header-block">
+                  </div></script><script id="today-header-template" type="text/x-handlebars-template"><div class="today__header-block">
             
                      <p class="today__day">{{weekday}}</p>
                      <p class="today__date">{{date}}</p>
             
-                  </div>
-            </script>
-            <div class="tomorrow js-page">
-               <div class="tomorrow__title">
-            
-               </div>
-               <div class="tomorrow__main">
-            
-               </div>
-            </div>
-            
-             <script id="tomorrow-header-template" type="text/x-handlebars-template">
-                 <div class="tomorrow__header-block">
+                  </div></script><div class="tomorrow js-page"><div class="tomorrow__title"></div><div class="tomorrow__main"></div></div><script id="tomorrow-header-template" type="text/x-handlebars-template"><div class="tomorrow__header-block">
             
                      <p class="tomorrow__day">{{weekday}}</p>
                      <p class="tomorrow__date">{{date}}</p>
             
-                  </div>
-            </script>
-            
-            <script id="tomorrow-template" type="text/x-handlebars-template">
-                 <div class="tomorrow__block">
+                  </div></script><script id="tomorrow-template" type="text/x-handlebars-template"><div class="tomorrow__block">
                       {{#each this}}
                             <div class="tomorrow__str">
                                 <p class="tomorrow__time">{{title}}</p>
@@ -132,40 +37,12 @@
                                 <p class="tomorrow__text">{{description}}</p>
                             </div>
                       {{/each}}
-                  </div>
-            </script>
-            <div class="weekend js-page">
-                  <div class="weekend__block">
-                        <div class="weekend__title js-saturday__title">
-            
-                        </div>
-                        <div class="saturday__main">
-            
-                        </div>
-                  </div>
-            
-                  <div class="weekend__block js-sunday">
-                        <div class="weekend__title js-sunday__title weekend__title--margin">
-            
-                        </div>
-                        <div class="sunday__main">
-            
-                        </div>
-                  </div>
-            
-            </div>
-            
-                <script id="saturday-header-template" type="text/x-handlebars-template">
-                     <div class="saturday__header-block">
+                  </div></script><div class="weekend js-page"><div class="weekend__block"><div class="weekend__title js-saturday__title"></div><div class="saturday__main"></div></div><div class="weekend__block js-sunday"><div class="weekend__title js-sunday__title weekend__title--margin"></div><div class="sunday__main"></div></div></div><script id="saturday-header-template" type="text/x-handlebars-template"><div class="saturday__header-block">
             
                          <p class="weekend__day">{{weekday}}</p>
                          <p class="weekend__date">{{date}}</p>
             
-                      </div>
-                </script>
-            
-                <script id="saturday-template" type="text/x-handlebars-template">
-                     <div class="saturday__block">
+                      </div></script><script id="saturday-template" type="text/x-handlebars-template"><div class="saturday__block">
                           {{#each this}}
                                 <div class="weekend__str">
                                     <p class="weekend__time">{{title}}</p>
@@ -176,20 +53,12 @@
                                     <p class="weekend__text">{{description}}</p>
                                 </div>
                           {{/each}}
-                      </div>
-                </script>
-            
-                <script id="sunday-header-template" type="text/x-handlebars-template">
-                     <div class="sunday__header-block">
+                      </div></script><script id="sunday-header-template" type="text/x-handlebars-template"><div class="sunday__header-block">
             
                          <p class="weekend__day">{{weekday}}</p>
                          <p class="weekend__date">{{date}}</p>
             
-                      </div>
-                </script>
-            
-                <script id="sunday-template" type="text/x-handlebars-template">
-                     <div class="sunday__block">
+                      </div></script><script id="sunday-template" type="text/x-handlebars-template"><div class="sunday__block">
                           {{#each this}}
                                 <div class="weekend__str">
                                     <p class="weekend__time">{{title}}</p>
@@ -200,35 +69,7 @@
                                     <p class="weekend__text">{{description}}</p>
                                 </div>
                           {{/each}}
-                      </div>
-                </script>
-            <div class="add-sity js-page">
-            
-               <div class="js-add-sity__block">
-                     <div class="add-sity__str js-count_0">
-                        <p class="add-sity__sity"></p>
-                        <p class="add-sity__arrival">приезд/отъезд</p>
-                        <p class="add-sity__date">
-                            <input type="text" class="js-calendar" id="datepicker" placeholder="Дата">
-                        </p>
-                        <p class="add-sity__del"></p>
-                    </div>
-                </div>
-                <input class="add-sity__input js-none" id="add-city" type="search" placeholder="добавить город...">
-            
-                <div class="add-sity__control">
-                    <button class="add-sity__button">добавить еще город</button>
-                    <a class="add-sity__look" href="/">Посмотреть погоду &raquo;</a>
-                </div>
-            
-            </div>
-            <div class="wayfull js-page">
-            
-            </div>
-            
-            <script id="wayfull-template" type="text/x-handlebars-template">
-            
-                      <div class="wayfull__title">
+                      </div></script><div class="add-sity js-page"><div class="js-add-sity__block"><div class="add-sity__str js-count_0"><p class="add-sity__sity"></p><p class="add-sity__arrival">приезд/отъезд</p><p class="add-sity__date"><input type="text" class="js-calendar" id="datepicker" placeholder="Дата"></p><p class="add-sity__del"></p></div></div><input class="add-sity__input js-none" id="add-city" type="search" placeholder="добавить город..."><div class="add-sity__control"><button class="add-sity__button">добавить еще город</button> <a class="add-sity__look" href="/">Посмотреть погоду &raquo;</a></div></div><div class="wayfull js-page"></div><script id="wayfull-template" type="text/x-handlebars-template"><div class="wayfull__title">
                           <p class="wayfull__day">{{toDay.header.weekday}}</p>
                           <p class="wayfull__date">{{toDay.header.date}}</p>
                           <p class="wayfull__city">{{sityName}}</p>
@@ -243,23 +84,4 @@
                                 <p class="wayfull__temp">{{temperature}}&deg;С</p>
                                 <p class="wayfull__text">{{description}}</p>
                             </div>
-                      {{/each}}
-            
-            </script>
-        </div>
-        <footer class="footer">
-            <div class="wrap-line"></div>
-            <p class="footer__copiright">GoIT Project. Front-End Advance Course, 2018</p>
-        </footer>
-    </div>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxgSIgtRrVLvndTS6L5yfQgR5i5sy40K8&libraries=places&language=ru"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-    <script src="https://darkskyapp.github.io/skycons/skycons.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
-    <script src="https://darksky.net/js/lib/pikaday.js"></script>
-    <script src="scripts.min.js"></script>
-
-</body>
-
-</html>
+                      {{/each}}</script></div><footer class="footer"><div class="wrap-line"></div><p class="footer__copiright">GoIT Project. Front-End Advance Course, 2018</p></footer></div><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxgSIgtRrVLvndTS6L5yfQgR5i5sy40K8&libraries=places&language=ru"></script><!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script> --><script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script><script src="https://darkskyapp.github.io/skycons/skycons.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script><script src="https://darksky.net/js/lib/pikaday.js"></script><script src="scripts.min.js"></script></body></html>

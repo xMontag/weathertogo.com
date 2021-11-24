@@ -22,7 +22,7 @@ gulp.task('html', () => {
     .pipe(rigger())
     // минифицируем html
     .pipe(htmlmin({
-      collapseWhitespace: false
+      collapseWhitespace: true
     }))
     // выкидываем html в папку dist
     .pipe(gulp.dest('./dist'))
