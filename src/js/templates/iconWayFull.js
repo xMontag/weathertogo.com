@@ -7,4 +7,5 @@ function iconWayFull() {
   });
 
   skycons.play();
+  console.log(skycons);
 }

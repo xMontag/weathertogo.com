@@ -1,3 +1,6 @@
+//= js/libs/skycons.js
+//= js/libs/pikaday.js
+
 //= js/polyfills/Array.from.js
 
 //= js/setActiveLink.js

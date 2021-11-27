@@ -30,12 +30,13 @@
 
 .today__str {
     display: flex;
+    align-items: center;
     color: $base-color;
     padding: rem(6px) 0;
 }
 
 .today__str:nth-child(even) {
-    background-color: #f0f3f4;
+    background-color: rgba(240, 243, 244, 0.3);
 }
 
 .today__time {

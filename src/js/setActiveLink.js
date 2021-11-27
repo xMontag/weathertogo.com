@@ -27,7 +27,8 @@ function setActiveLink(e) {
   wayfull.classList.remove("js-block");
 }
 
-function goAddWay() {
+function goAddWay(e) {
+  //e.preventDefault();
   let elem = links[3];
   if(!elem.classList.contains("menu__link--active")) {
      Array.from(links, elem => elem.classList.remove("menu__link--active"));
